@@ -1,0 +1,59 @@
+@import './base.css';
+
+nav {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(0deg,#389466,#42b883);
+  height: 3rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgba(250, 250, 250, 0.8);
+  margin-left: .8rem;
+  padding: .6rem .5rem 0 .8rem;
+  position: relative;
+}
+
+nav a:hover {
+  color: white
+}
+
+nav a.router-link-exact-active {
+  color: white;
+}
+
+nav a.router-link-exact-active:hover {
+  background-color: transparent;
+}
+
+nav a:first-of-type {
+  border: 0;
+  padding: .3rem;
+}
+
+nav a::before {
+  content: " ";
+  color: transparent;
+  position: absolute;
+  height: 6px;
+  width: 6px;
+  left: 0rem;
+  border-radius: 50%;
+  margin-top: 0.65rem;
+}
+
+nav a.router-link-exact-active::before {
+  background: #fff;
+}
+
+.cards {
+  background-color: var(--bg-color-light);
+  padding: 1rem;
+}
+
+input, select {
+  background-color: var(--bg-color-light) !important; 
+  color: white !important;
+  border-color: #3f4d77 !important;
+}
