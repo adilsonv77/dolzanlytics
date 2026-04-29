@@ -40,7 +40,7 @@ services:
     volumes:
       - static:/static
     ports:
-      - "80:80"
+      - "9180:80"
     depends_on:
       - frontend
       - gunicorn
