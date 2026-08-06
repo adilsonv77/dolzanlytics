@@ -1,8 +1,7 @@
-version: '3.7'
-
 services:
   gunicorn:
     image: gabrieldolzan/tcc-gunicorn
+    restart: unless-stopped
     volumes:
       - static:/static
     env_file:
@@ -16,6 +15,7 @@ services:
       - default
   db:
     image: postgres:15
+    restart: unless-stopped
     environment:
         TZ: "America/Sao_Paulo"
     volumes:
@@ -26,6 +26,7 @@ services:
       - default
   frontend:
     image: gabrieldolzan/tcc-vuejs
+    restart: unless-stopped
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -33,6 +34,7 @@ services:
       - app-network
   nginx:
     image: gabrieldolzan/tcc-nginx
+    restart: unless-stopped
     build:
       context: ./nginx
       dockerfile: Dockerfile
